@@ -84,7 +84,7 @@ add_action('manage_articulos_posts_custom_column', 'add_custom_column_content_to
  */
 function limit_paragraph_characters_in_editor($block_content, $block) {
     // Verifica si estás editando un CPT llamado "articulos"
-    if ($block['blockName'] === 'core/paragraph' && is_admin() && is_post_type_archive('articulos')) {
+    if ($block['blockName'] === 'core/paragraph' && is_admin() && isset($_GET['post']) && get_post_type($_GET['post']) === 'articulos') {
         $limit = 84; // Establece el límite de caracteres deseado
         $block_content = substr($block_content, 0, $limit); // Limita el contenido del bloque de párrafo
     }

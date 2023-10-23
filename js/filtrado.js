@@ -2,6 +2,11 @@ jQuery(document).ready(function($) {
     $('#filtrado a').click(function(e) {
         e.preventDefault();
         var term = $(this).data('filter');
+
+        // Elimina la clase "active" de todos los elementos <a> dentro de #filters
+        $("#filters a").removeClass("active");
+        // Agrega la clase "active" al elemento <a> que se hizo clic
+        $(this).addClass("active");        
         
         // Realiza una solicitud AJAX
         $.ajax({

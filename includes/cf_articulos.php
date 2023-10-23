@@ -71,7 +71,7 @@ function wdm_meta_box_callback( $post ) {
     <br />  
     <input type="radio" name="estado" value="Disponible" <?php checked( $value, 'Disponible' ); ?> >Disponible<br>
     <input type="radio" name="estado" value="Prestado" <?php checked( $value, 'Prestado' ); ?> >Prestado<br>
-    <input type="radio" name="estado" value="No-disponible" <?php checked( $value, 'No-disponible' ); ?> >No disponible<br> 
+    <input type="radio" name="estado" value="No disponible" <?php checked( $value, 'No disponible' ); ?> >No disponible<br> 
 
     <?php
 
@@ -111,7 +111,8 @@ function wdm_save_meta_box_data( $post_id ) {
 
 
     // Sanitize user input.
-    $new_meta_value = ( isset( $_POST['estado'] ) ? sanitize_html_class( $_POST['estado'] ) : '' );
+    $new_meta_value = ( isset( $_POST['estado'] ) ? sanitize_text_field( $_POST['estado'] ) : '' );
+
 
     // Update the meta field in the database.
     update_post_meta( $post_id, 'my_key', $new_meta_value );

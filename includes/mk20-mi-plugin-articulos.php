@@ -59,7 +59,7 @@ function filtrar_articulos() {
                                     echo '<div class="disponible"><strong>' . $_articulos_estado . '</strong></div>';
                                 } elseif ($_articulos_estado == 'Prestado') {
                                     echo '<div class="prestado"><strong>' . $_articulos_estado . '</strong></div>';
-                                } elseif ($_articulos_estado == 'No-disponible') {
+                                } elseif ($_articulos_estado == 'No disponible') {
                                     echo '<div class="no_disponible"><strong>' . $_articulos_estado . '</strong></div>';
                                 } ?>
                             </div>
