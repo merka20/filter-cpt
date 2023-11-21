@@ -129,3 +129,6 @@ function registrar_taxonomia_familia() {
     register_taxonomy('familia', 'articulos', $args);
 }
 add_action('init', 'registrar_taxonomia_familia');
+
+
+   
